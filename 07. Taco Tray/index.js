@@ -12,14 +12,14 @@ function getRandomNumberOfTacos() {
         - new Array()
         - Array.fill()
     */
-        return new Array(Math.floor(Math.random(1, 11) * 10)).fill( "🌮")
+    return new Array(Math.floor(Math.random() * 10)).fill( "🌮")
 
 }
 
 function putTacosOnTray() {
-    return getRandomNumberOfTacos().map(function (taco) {
-        return `<div class="taco">${taco}</div>`
-    }).join('')
+    return getRandomNumberOfTacos()
+    .map((taco) => `<div class="taco">${taco}</div>`)
+    .join('');
 }
 
 document.getElementById('tray').innerHTML = putTacosOnTray()
