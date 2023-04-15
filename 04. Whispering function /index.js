@@ -15,10 +15,10 @@ Hint: endsWith and slice
 
 function whisper(string){
     const transformedString = string.toLowerCase()
-    return`shh...${transformedString.endsWith("!") ? 
-        transformedString.slice(0,-1)
-        : transformedString
-       }`
+    const withoutExclamation = transformedString.endsWith("!") ? 
+    transformedString.slice(0,-1)
+    : transformedString
+    return`shh...${withoutExclamation}`
 }
 
 console.log(whisper("PLEASE STOP SHOUTING."));

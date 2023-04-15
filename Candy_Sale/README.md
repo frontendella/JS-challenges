@@ -1,1 +1,0 @@
-# Candy Sale function

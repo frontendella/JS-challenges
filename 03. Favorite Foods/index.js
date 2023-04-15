@@ -28,5 +28,3 @@ meals.innerHTML = `
 and for supper I want usually want ${supper} 🥗.
     </div
     `
-
-console.log(lunch)
