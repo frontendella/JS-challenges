@@ -29,3 +29,11 @@ function getSaleItems(data){
 
 console.log(getSaleItems(products))
 
+//Refactoring - using destructuring 
+
+function getSaleItems(data) {
+    const filtered = data.filter(candy => candy.type === 'sweet');
+    return filtered.map(({item, price}) => ({item, price}));
+}
+
+console.log(getSaleItems(products));
