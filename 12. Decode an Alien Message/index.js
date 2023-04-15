@@ -23,9 +23,17 @@ Example input: !htrae ot emocleW
 Example output: Welcome to earth!
 */  
 
-function reverseString(arr){
-    return arr;
-}
+function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversed += str[i];
+    }
+    return reversed;
+  }
+  
+
+
+
 
 /*
 Step 2: Now we'll reverse all strings in an array. Write a function that takes in
@@ -36,8 +44,17 @@ reverse the strings manually.
 */ 
 
 function reverseStringsInArray(arr){
-    return arr;
+    return arr.map(word => reverseString(word))
 }
+
 
 console.log(reverseString(title));
 console.log(reverseStringsInArray(messages));
+
+
+// Using built-in JavaScript string methods
+
+// function reverseString(str) {
+//     return str.split("").reverse().join("");
+//   }
+
