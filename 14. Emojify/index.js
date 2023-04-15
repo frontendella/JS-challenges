@@ -36,10 +36,19 @@ Example input: "elephant"
 Example output: "elephant"
 */ 
 
-function emojifyWord(word){
-    return;
-}
 
+function emojifyWord(word) {
+    const lowerCaseWord = word.toLowerCase();
+        const findWord = lowerCaseWord.startsWith(":") ?
+        lowerCaseWord.slice(1, -1) :
+        lowerCaseWord.endsWith(":") ? 
+        lowerCaseWord.slice(0, -1) : 
+        lowerCaseWord;
+        return  findWord in emojis ? emojis[findWord] : findWord;
+ }
+ 
+ 
+ 
 /* 2. Write a function to find any emoji shortcodes in a phrase.
 Your function should map over each word in the phrase, emojify any word
 that begins and ends with a colon, then return the emojified phrase. 
@@ -53,8 +62,9 @@ Example output: "I 💜 my elephant"
 */ 
 
 function emojifyPhrase(phrase){
-    return;
-}
+    return phrase.split(" ").map(word => emojifyWord(word)).join(' ')
+ }
+ 
 
 
 
