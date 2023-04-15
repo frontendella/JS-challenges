@@ -16,17 +16,27 @@ Hint: Trying using slice() and .toUpperCase()
 */
 
 function capitalizeWord(word){
-    return;
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+  
+  function toTitleCase(str){
+      return (str.split(' ')).map(word => {
+          return capitalizeWord(word) + word.slice(1);
+      }).join(' ');
+  }
+  
+  
+
+function toTitleCase(str){
+    return (str.split(' ')).map(word => {
+        return capitalizeWord(word) + word.slice(1);
+    }).join(' ');
 }
 
 /* 
 Now write a function that capitalizes every word in a sentence. 
 How can you reuse the function you just wrote? 
 */ 
-
-function toTitleCase(str){
-    
-}
 
 // Test your functions
 console.log(capitalizeWord("pumpkin"));
