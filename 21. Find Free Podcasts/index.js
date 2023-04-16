@@ -21,7 +21,23 @@ Expected output:
 */
 
 function getFreePodcasts(data){
-   
-}
+    return data.filter(podcast => !podcast.paid).map(podcast => ({
+        title: podcast.title,
+        rating: podcast.rating,
+        paid: podcast.paid
+    }))
+ }
+
+// Refactor by using destructuring 
+
+function getFreePodcasts(data) {
+    return data.filter(podcast => !podcast.paid).map(({title, rating, paid}) => ({
+        title,
+        rating,
+        paid
+    }));
+ }
+ 
+
 
 console.log(getFreePodcasts(podcasts))
