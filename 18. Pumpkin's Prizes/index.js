@@ -24,9 +24,31 @@ const kittyPrizes = [
     ["🐟","💐", "💐"], "💵", "💵", ["🐟"], "🐟"
 ];
 
-function flatten(arr){
- 
-}
+
+// Manually
+function flatten(arr) {
+    let flattenedArray = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        flattenedArray = flattenedArray.concat(flatten(arr[i]));
+      } else {
+        flattenedArray.push(arr[i]);
+      }
+    }
+    return flattenedArray;
+  }
+  
+
+
+
+// By using the method
+
+function flatten(arr) {
+    return arr.flat(Infinity);
+  }
+  
+  
+
 
 console.log(flatten(kittyPrizes));
 console.log(flatten(kittyScores));
